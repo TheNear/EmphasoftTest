@@ -20,3 +20,9 @@ export const AuthFormTitle = styled.h4`
   text-transform: uppercase;
   border-bottom: 2px solid ${({ theme }) => theme.mainColor};
 `;
+
+export const AuthFormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

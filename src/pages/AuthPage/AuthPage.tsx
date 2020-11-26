@@ -7,7 +7,7 @@ const AuthPage: React.FC = () => {
     <AuthPageWrapper>
       <AuthForm />
     </AuthPageWrapper>
-  )
+  );
 };
 
 export { AuthPage };

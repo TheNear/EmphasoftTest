@@ -6,5 +6,9 @@ export const AuthPageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, ${({ theme }) => theme.secondColor }, ${({ theme }) => theme.mainColor })
+  background: linear-gradient(
+    to bottom right,
+    ${({ theme }) => theme.secondColor},
+    ${({ theme }) => theme.mainColor}
+  );
 `;

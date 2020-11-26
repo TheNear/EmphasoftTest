@@ -2,10 +2,11 @@ import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   fontColor: "#252525",
-  secondFontColor: "#7D7D7D",
+  secondFontColor: "#767676",
   mainColor: "#029CF5",
   secondColor: "#15EDED",
-}
+  inactiveColor: "#F6F6F6",
+};
 
 export const GlobalStyle = createGlobalStyle`
   * {

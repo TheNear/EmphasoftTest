@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthFormContainer, AuthFormTitle } from "./AuthFormStyle";
+import { AuthFormContainer, AuthFormTitle, AuthFormWrapper } from "./AuthFormStyle";
 import { ReactComponent as UserAvatar } from "../../assets/img/userMale.svg";
 import { AuthInput } from "../../styles/FormStyle";
 import { StyledButton } from "../../styles/ButtonStyle";
@@ -9,11 +9,11 @@ const AuthForm: React.FC = () => {
     <AuthFormContainer>
       <AuthFormTitle>sign in</AuthFormTitle>
       <UserAvatar />
-      <form>
+      <AuthFormWrapper>
         <AuthInput placeholder="User Name" type="text" />
         <AuthInput placeholder="Password" type="text" />
         <StyledButton type="submit">log in</StyledButton>
-      </form>
+      </AuthFormWrapper>
     </AuthFormContainer>
   );
 };
