@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "username": "John119",
+    "first_name": "John",
+    "last_name": "Smit",
+    "is_active": true,
+    "last_login": "2020-11-28T14:08:48.988Z",
+    "is_superuser": true
+  },
+  {
+    "id": 1,
+    "username": "Bob112",
+    "first_name": "Bob",
+    "last_name": "Tetcher",
+    "is_active": true,
+    "last_login": "2020-11-28T14:08:48.988Z",
+    "is_superuser": false
+  },
+  {
+    "id": 2,
+    "username": "Todd111",
+    "first_name": "Todd",
+    "last_name": "Magwayer",
+    "is_active": true,
+    "last_login": "2020-11-28T14:08:48.988Z",
+    "is_superuser": false
+  },
+  {
+    "id": 3,
+    "username": "SamIf32",
+    "first_name": "Sam",
+    "last_name": "Winchester",
+    "is_active": true,
+    "last_login": "2020-11-28T14:08:48.988Z",
+    "is_superuser": false
+  },
+  {
+    "id": 4,
+    "username": "Kor",
+    "first_name": "Kor",
+    "last_name": "Tik",
+    "is_active": true,
+    "last_login": "2020-11-28T14:08:48.988Z",
+    "is_superuser": false
+  }
+]

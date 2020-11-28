@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
-export const AuthInput = styled.input`
+export const AuthFormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+interface AuthInputProps {
+  errors: string;
+}
+
+export const AuthInput = styled.input<AuthInputProps>`
   width: 100%;
   text-align: center;
   font-family: inherit;
   font-size: 1.5rem;
   font-weight: 500;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.secondFontColor};
+  border: 1px solid ${({ theme, errors }) => (errors ? theme.rejectColor : theme.secondFontColor)};
   border-radius: 0.4rem;
   margin: 1rem 0;
   padding: 1rem;
@@ -15,8 +25,8 @@ export const AuthInput = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 1px solid ${({ theme }) => theme.mainColor};
-    box-shadow: 0 1px 0 0 ${({ theme }) => theme.mainColor};
+    border: 1px solid ${({ theme, errors }) => (errors ? theme.rejectColor : theme.mainColor)};
+    box-shadow: 0 1px 0 0 ${({ theme, errors }) => (errors ? theme.rejectColor : theme.mainColor)};
   }
 
   &::placeholder {

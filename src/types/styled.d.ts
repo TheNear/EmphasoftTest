@@ -7,5 +7,6 @@ declare module "styled-components" {
     mainColor: string
     secondColor: string,
     inactiveColor: string,
+    rejectColor: string,
   }
 }

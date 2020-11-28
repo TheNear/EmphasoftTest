@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { commonContainerStyle } from "../../styles/CommonStyles";
 
+// FIXME: Фикс. ширина
 export const AuthFormContainer = styled.div`
   display: flex;
   max-width: 40rem;
@@ -7,10 +9,7 @@ export const AuthFormContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 0 18px 4px #00000036;
+  ${commonContainerStyle};
 `;
 
 // TODO: Потом поменять, это не заголовок, а кнопка.
@@ -19,10 +18,4 @@ export const AuthFormTitle = styled.h4`
   font-weight: 600;
   text-transform: uppercase;
   border-bottom: 2px solid ${({ theme }) => theme.mainColor};
-`;
-
-export const AuthFormWrapper = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;

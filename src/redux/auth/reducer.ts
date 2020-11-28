@@ -2,6 +2,7 @@ import { AuthActions, AuthInitialState } from "./types";
 
 const initialState: AuthInitialState = {
   token: "",
+  user: null,
 };
 
 export const authReducer = (state = initialState, action: AuthActions): AuthInitialState => {

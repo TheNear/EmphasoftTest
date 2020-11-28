@@ -6,6 +6,7 @@ export const theme: DefaultTheme = {
   mainColor: "#029CF5",
   secondColor: "#15EDED",
   inactiveColor: "#F6F6F6",
+  rejectColor: "#e74c3c",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -22,5 +23,15 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Montserrat', sans-serif;
     color: ${theme.fontColor};
+  }
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+    to bottom right,
+    ${theme.secondColor},
+    ${theme.mainColor}
+  );
   }
 `;

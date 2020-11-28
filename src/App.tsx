@@ -1,10 +1,12 @@
 import React from "react";
-import { AuthPage } from "./pages/AuthPage/AuthPage";
+import { UsersPage } from "./pages/UsersPage/UsersPage";
+// import { AuthPage } from "./pages/AuthPage/AuthPage";
 
 const App: React.FC = () => {
   return (
     <>
-      <AuthPage />
+      {/* <AuthPage /> */}
+      <UsersPage />
     </>
   );
 };
