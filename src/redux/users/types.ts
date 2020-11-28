@@ -8,8 +8,15 @@ export enum UsersActionTypes {
   SET_USERS = "users/SET_USERS",
 }
 
+export enum PossibleSortTypes {
+  NOT_SORTED = "NOT_SORTED",
+  BY_ID = "BY_ID",
+}
+
 export interface UsersInitialState {
   readonly data: IUsersResponse[],
+  readonly sortType: PossibleSortTypes,
+  readonly sortDirectionToLow: boolean,
 }
 
 export type UsersActions = ReturnType<InferValueTypes<typeof actions>>;

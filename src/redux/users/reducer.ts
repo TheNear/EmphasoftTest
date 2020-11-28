@@ -1,7 +1,9 @@
-import { UsersActions, UsersActionTypes, UsersInitialState } from "./types";
+import { PossibleSortTypes, UsersActions, UsersActionTypes, UsersInitialState } from "./types";
 
 const initialState: UsersInitialState = {
   data: [],
+  sortDirectionToLow: true,
+  sortType: PossibleSortTypes.NOT_SORTED,
 };
 
 export const usersReducer = (state = initialState, action: UsersActions): UsersInitialState => {
