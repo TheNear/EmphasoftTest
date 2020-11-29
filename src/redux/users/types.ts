@@ -6,6 +6,8 @@ import * as actions from "./actions";
 export enum UsersActionTypes {
   FETCH_USERS = "users/FETCH_USERS",
   SET_USERS = "users/SET_USERS",
+  SET_SORT_TYPE = "users/SET_SORT_TYPE",
+  CHANGE_SORT_DIRECTION = "users/CHANGE_SORT_DIRECTION",
 }
 
 export enum PossibleSortTypes {

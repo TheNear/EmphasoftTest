@@ -4,24 +4,24 @@ import { UserListTable, UserListTableCell, UserListWrapper, UserTableHead } from
 // import usersData from "../../mock/users.json";
 import { IUsersResponse } from "../../types/api";
 import { getFormatedDate } from "../../assets/js/formatData";
-import { fetchUsers } from "../../redux/users/actions";
+import { changeSortDirection, fetchUsers } from "../../redux/users/actions";
 import { RootState } from "../../types/redux";
 import { getSortedUsers } from "../../redux/users/selectors";
 
 // TODO: Добавить какой-нибудь интерфейс Суперюзеру и активному юзеру
 const UserList: React.FC = () => {
-  const dipatch = useDispatch();
+  const dispatch = useDispatch();
   const usersData = useSelector(getSortedUsers);
   useEffect(() => {
-    dipatch(fetchUsers());
-  }, [dipatch]);
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   return (
     <UserListWrapper>
       <UserListTable>
         <UserTableHead>
           <tr>
-            <UserListTableCell textAlign="center">id</UserListTableCell>
+            <UserListTableCell onClick={() => dispatch(changeSortDirection())} textAlign="center">id</UserListTableCell>
             <UserListTableCell>nickname</UserListTableCell>
             <UserListTableCell>firstname</UserListTableCell>
             <UserListTableCell>lastname</UserListTableCell>

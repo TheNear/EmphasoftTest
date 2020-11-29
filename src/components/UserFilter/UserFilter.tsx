@@ -23,7 +23,6 @@ const filterInputs: FilterInputs[] = [
 
 const UserFilter: React.FC = () => {
   const dispatch = useDispatch();
-  // const [filterValue, setFilterValue] = useState<UsersFilterState>({} as UsersFilterState);
   const { values, changeHandler } = useForm<UsersFilterState>();
   const debouncedFilterValue = useDebounce(values);
 

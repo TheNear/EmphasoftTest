@@ -13,6 +13,17 @@ export const usersReducer = (state = initialState, action: UsersActions): UsersI
         ...state,
         data: action.payload,
       };
+    case UsersActionTypes.SET_SORT_TYPE:
+      return {
+        ...state,
+        sortDirectionToLow: true,
+        sortType: state.sortType === action.payload ? PossibleSortTypes.NOT_SORTED : action.payload,
+      };
+    case UsersActionTypes.CHANGE_SORT_DIRECTION:
+      return {
+        ...state,
+        sortDirectionToLow: !state.sortDirectionToLow,
+      };
     default:
       return state;
   }
