@@ -1,4 +1,5 @@
 import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { device } from "./styles/media";
 
 export const theme: DefaultTheme = {
   fontColor: "#252525",
@@ -34,4 +35,11 @@ export const GlobalStyle = createGlobalStyle`
     ${theme.mainColor}
   );
   }
+
+  @media ${device.tablet} {
+    html {
+      font-size: 50%;
+    }
+  }
+
 `;

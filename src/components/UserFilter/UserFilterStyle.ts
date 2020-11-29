@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CommonContainer } from "../../styles/CommonStyles";
+import { device } from "../../styles/media";
 
 export const UserFilterWrapper = styled(CommonContainer)`
   display: flex;
@@ -10,6 +11,7 @@ export const UserFilterWrapper = styled(CommonContainer)`
 
 export const UserFilterInput = styled.input`
   padding: 1rem;
+  flex-grow: 1;
   border: 1px solid ${({ theme }) => theme.fontColor};
   border-radius: 0.4rem;
   transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -18,6 +20,10 @@ export const UserFilterInput = styled.input`
     outline: none;
     border: 1px solid ${({ theme }) => theme.mainColor};
     box-shadow: 0 0 2px 0 ${({ theme }) => theme.mainColor};
+  }
+
+  @media ${device.mobileM} {
+    padding: 0.5rem;
   }
 `;
 

@@ -17,9 +17,18 @@ export const SortButtonType = styled.button<SortButtonTypeProps>`
   border: none;
   background-color: transparent;
   text-transform: inherit;
+  text-decoration: underline;
   font-weight: inherit;
   cursor: pointer;
   color: ${({ theme, active }) => (active ? theme.mainColor : "inherit")};
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid ${({ theme }) => theme.fontColor};
+  }
 `;
 
 interface SortButtonDirectionProps {
@@ -34,14 +43,22 @@ export const SortButtonDirection = styled.button<SortButtonDirectionProps>`
   right: 0;
   top: 0;
   bottom: 0;
-  margin-left: ${({ active }) => (active ? "3px" : "0px")};
-  width: ${({ active }) => (active ? "16px" : "0px")};
+  margin-left: ${({ active }) => (active ? "0.3rem" : "0px")};
+  width: ${({ active }) => (active ? "1.6rem" : "0px")};
   height: 20px;
   border: none;
   background-color: transparent;
   overflow: hidden;
   transition: width 0.5s ease, margin 0.5s ease;
   cursor: pointer;
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid ${({ theme }) => theme.fontColor};
+  }
 
   :after {
     position: absolute;

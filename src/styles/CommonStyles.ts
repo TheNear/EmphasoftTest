@@ -1,10 +1,19 @@
 import styled, { css } from "styled-components";
+import { device } from "./media";
 
 export const commonContainerStyle = css`
   padding: 2rem;
   background-color: #fff;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0 18px 4px #00000036;
+
+  @media ${device.tablet} {
+    padding: 1.5rem;
+  }
+
+  @media ${device.mobileM} {
+    padding: 0.5rem;
+  }
 `;
 
 export const FullwindowContainer = styled.div`

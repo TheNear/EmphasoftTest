@@ -11,8 +11,8 @@
   {
     "id": 1,
     "username": "Bob112",
-    "first_name": "Bob",
-    "last_name": "Tetcher",
+    "first_name": "Christopher",
+    "last_name": "Tetcherbetcher",
     "is_active": true,
     "last_login": "2020-11-28T14:08:48.988Z",
     "is_superuser": false

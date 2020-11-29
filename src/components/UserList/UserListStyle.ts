@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CommonContainer, commonContainerStyle } from "../../styles/CommonStyles";
+import { device } from "../../styles/media";
 
 export const UserListWrapper = styled(CommonContainer)`
   width: 100%;
@@ -16,6 +17,12 @@ export const UserTableHead = styled.thead`
   text-transform: uppercase;
 `;
 
+export const UserListTableRow = styled.tr`
+  :nth-child(2n) {
+    background: ${({ theme }) => theme.inactiveColor};
+  }
+`;
+
 interface UserListTableCellProps {
   textAlign?: "left" | "right" | "center";
   width?: string;
@@ -26,4 +33,8 @@ export const UserListTableCell = styled.td<UserListTableCellProps>`
   text-align: ${({ textAlign }) => textAlign || "left"};
   border-bottom: 1px solid ${({ theme }) => theme.inactiveColor};
   ${({ width }) => (width ? `width: ${width}` : "")};
+
+  @media ${device.mobileL} {
+    padding: 0.5rem;
+  }
 `;
