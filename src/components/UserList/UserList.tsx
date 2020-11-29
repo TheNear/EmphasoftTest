@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { UserListTable, UserListTableCell, UserListWrapper, UserTableHead } from "./UserListStyle";
-// import usersData from "../../mock/users.json";
 import { IUsersResponse } from "../../types/api";
 import { getFormatedDate } from "../../assets/js/formatData";
-import { changeSortDirection, fetchUsers } from "../../redux/users/actions";
-import { RootState } from "../../types/redux";
+import { fetchUsers } from "../../redux/users/actions";
 import { getSortedUsers } from "../../redux/users/selectors";
+import { UserSortButton } from "../UserSortButton/UserSortButton";
+import { PossibleSortTypes } from "../../redux/users/types";
 
 // TODO: Добавить какой-нибудь интерфейс Суперюзеру и активному юзеру
 const UserList: React.FC = () => {
@@ -17,12 +17,14 @@ const UserList: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <UserListWrapper>
+    <UserListWrapper title="USER LIST">
       <UserListTable>
         <UserTableHead>
           <tr>
-            <UserListTableCell onClick={() => dispatch(changeSortDirection())} textAlign="center">id</UserListTableCell>
-            <UserListTableCell>nickname</UserListTableCell>
+            <UserListTableCell width="7rem" textAlign="center">
+              <UserSortButton sortType={PossibleSortTypes.BY_ID}>id</UserSortButton>
+            </UserListTableCell>
+            <UserListTableCell>username</UserListTableCell>
             <UserListTableCell>firstname</UserListTableCell>
             <UserListTableCell>lastname</UserListTableCell>
             <UserListTableCell textAlign="right">last online</UserListTableCell>
@@ -35,7 +37,9 @@ const UserList: React.FC = () => {
               <UserListTableCell>{user.username}</UserListTableCell>
               <UserListTableCell>{user.first_name}</UserListTableCell>
               <UserListTableCell>{user.last_name}</UserListTableCell>
-              <UserListTableCell textAlign="right">{getFormatedDate(user.last_login)}</UserListTableCell>
+              <UserListTableCell textAlign="right">
+                {getFormatedDate(user.last_login)}
+              </UserListTableCell>
             </tr>
           ))}
         </tbody>

@@ -7,6 +7,7 @@ export interface UseFormReturn<T> {
   values: T;
   errors: KeyStringInterface;
   changeHandler: (evt: ChangeEvent<HTMLInputElement>) => void;
+  resetValues: () => void;
 }
 
 export const useForm = <T extends KeyStringInterface = KeyStringInterface>(): UseFormReturn<T> => {
@@ -19,6 +20,10 @@ export const useForm = <T extends KeyStringInterface = KeyStringInterface>(): Us
     } as T);
   };
 
+  const resetValues = () => {
+    setValues({} as T);
+  };
+
   // const submitHandler = () => {
   // };
 
@@ -26,5 +31,6 @@ export const useForm = <T extends KeyStringInterface = KeyStringInterface>(): Us
     values,
     errors,
     changeHandler,
+    resetValues,
   };
 };

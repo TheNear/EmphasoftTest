@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { commonContainerStyle } from "../../styles/CommonStyles";
+import { CommonContainer, commonContainerStyle } from "../../styles/CommonStyles";
 
-export const UserListWrapper = styled.div`
-  ${commonContainerStyle};
+export const UserListWrapper = styled(CommonContainer)`
   width: 100%;
 `;
 
@@ -19,10 +18,12 @@ export const UserTableHead = styled.thead`
 
 interface UserListTableCellProps {
   textAlign?: "left" | "right" | "center";
+  width?: string;
 }
 
 export const UserListTableCell = styled.td<UserListTableCellProps>`
   padding: 1rem;
   text-align: ${({ textAlign }) => textAlign || "left"};
   border-bottom: 1px solid ${({ theme }) => theme.inactiveColor};
+  ${({ width }) => (width ? `width: ${width}` : "")};
 `;
