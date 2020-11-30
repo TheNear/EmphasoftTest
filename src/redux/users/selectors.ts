@@ -1,21 +1,26 @@
 import { createSelector } from "reselect";
+import { IUsersResponse } from "../../types/api";
 import { RootState } from "../../types/redux";
+import { UsersFilterState } from "../usersFilter/types";
 import { PossibleSortTypes } from "./types";
 
-const getUsers = (store: RootState) => store.users.data;
-const getSortType = (store: RootState) => store.users.sortType;
-const getSortDirection = (store: RootState) => store.users.sortDirectionToLow;
-const getFilterValue = (store: RootState) => store.filter;
+export const getUsersData = (store: RootState): IUsersResponse[] => store.users.data;
+export const getSortType = (store: RootState): PossibleSortTypes => store.users.sortType;
+export const getSortDirection = (store: RootState): boolean => store.users.sortDirectionToLow;
+export const getFilterValue = (store: RootState): UsersFilterState => store.filter;
 
-export const getFilterdUsers = createSelector([getUsers, getFilterValue], (users, filterValues) => {
-  return users.filter((user) => {
-    const username = user.username.toLowerCase();
-    const isUserNameCoincidence = filterValues.name
-      ? username.includes(filterValues.name.toLowerCase())
-      : true;
-    return isUserNameCoincidence;
-  });
-});
+export const getFilterdUsers = createSelector(
+  [getUsersData, getFilterValue],
+  (users, filterValues) => {
+    return users.filter((user) => {
+      const username = user.username.toLowerCase();
+      const isUserNameCoincidence = filterValues.name
+        ? username.includes(filterValues.name.toLowerCase())
+        : true;
+      return isUserNameCoincidence;
+    });
+  },
+);
 
 export const getSortedUsers = createSelector(
   [getFilterdUsers, getSortType, getSortDirection],

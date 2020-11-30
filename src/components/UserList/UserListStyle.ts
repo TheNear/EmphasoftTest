@@ -18,7 +18,7 @@ export const UserTableHead = styled.thead`
 `;
 
 export const UserListTableRow = styled.tr`
-  :nth-child(2n) {
+  :nth-child(2n + 1) {
     background: ${({ theme }) => theme.inactiveColor};
   }
 `;

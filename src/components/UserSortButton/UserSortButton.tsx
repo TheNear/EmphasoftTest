@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSortDirection, setSortType } from "../../redux/users/actions";
+import { getSortDirection, getSortType } from "../../redux/users/selectors";
 import { PossibleSortTypes } from "../../redux/users/types";
-import { RootState } from "../../types/redux";
 import { SortButtonDirection, SortButtonType, SortButtonWrapper } from "./UserSortButtonStyle";
 
 export interface UserSortButtonProps {
@@ -11,8 +11,8 @@ export interface UserSortButtonProps {
 
 const UserSortButton: React.FC<UserSortButtonProps> = ({ children, sortType }) => {
   const dispatch = useDispatch();
-  const sortDirection = useSelector((store: RootState) => store.users.sortDirectionToLow);
-  const activeSortType = useSelector((store: RootState) => store.users.sortType);
+  const sortDirection = useSelector(getSortDirection);
+  const activeSortType = useSelector(getSortType);
 
   const changeSortTypeHandler = () => {
     dispatch(setSortType(sortType));

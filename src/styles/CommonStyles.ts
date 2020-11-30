@@ -44,3 +44,10 @@ export const CommonContainer = styled.div<CommonContaienrProps>`
     transform: translate(0, -50%);
   }`}
 `;
+
+export const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
