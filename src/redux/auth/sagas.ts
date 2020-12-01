@@ -1,7 +1,8 @@
 import { call, ForkEffect, put, takeEvery } from "redux-saga/effects";
+import { getErrorMessage } from "../../assets/js/helpers";
 import { api } from "../../assets/js/services";
 import { IAuthResponse } from "../../types/api";
-import { endLoading, startLoading } from "../app/action";
+import { endLoading, pushMessage, startLoading } from "../app/action";
 import { authRequest, removeAuthData, setAuthData } from "./actions";
 import { AuthActionTypes, AuthInitialState, IAuthUser } from "./types";
 
@@ -20,7 +21,7 @@ function* fetchAuth(action: ReturnType<typeof authRequest>) {
     };
     yield put(setAuthData(authData));
   } catch (error) {
-    console.log(error);
+    yield put(pushMessage(getErrorMessage(error.message)));
   } finally {
     yield put(endLoading());
   }

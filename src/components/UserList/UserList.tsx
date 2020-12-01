@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { UserListTable, UserListTableCell, UserListTableRow, UserListWrapper, UserTableHead } from "./UserListStyle";
 import { IUsersResponse } from "../../types/api";
-import { getFormatedDate } from "../../assets/js/formatData";
 import { fetchUsers } from "../../redux/users/actions";
 import { getSortedUsers } from "../../redux/users/selectors";
 import { UserSortButton } from "../UserSortButton/UserSortButton";
 import { PossibleSortTypes } from "../../redux/users/types";
+import { getFormatedDate } from "../../assets/js/helpers";
 
 // TODO: Добавить какой-нибудь интерфейс Суперюзеру и активному юзеру
 const UserList: React.FC = () => {

@@ -26,6 +26,7 @@ class ApiService {
 
     this.getToken = this.getToken.bind(this);
     this.getUsers = this.getUsers.bind(this);
+    this.refreshHeader = this.refreshHeader.bind(this);
   }
 
   static async get<T>(url: string, options?: AxiosRequestConfig): Promise<T> {
@@ -38,6 +39,16 @@ class ApiService {
     return data;
   }
 
+  private refreshHeader() {
+    this.axiosOption = {
+      ...this.axiosOption,
+      headers: {
+        ...this.axiosOption.headers,
+        Authorization: `Token ${this.token}`,
+      },
+    };
+  }
+
   public async getToken(postData: IAuthPost) {
     const data = await ApiService.post<IAuthResponse, IAuthPost>(
       this.AUTH_URL,
@@ -45,6 +56,7 @@ class ApiService {
       this.axiosOption,
     );
     this.token = data.token;
+    this.refreshHeader();
     return data;
   }
 

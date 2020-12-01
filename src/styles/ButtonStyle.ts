@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 1.7rem;
   text-transform: uppercase;
   color: white;
   border: none;

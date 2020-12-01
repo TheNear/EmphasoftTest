@@ -10,4 +10,6 @@ export const URL: URLInterface = {
   USER: "/api/v1/users/",
 };
 
+export const ALERT_LIFE_TIME = 3000;
+
 export const DEBOUNCE_DELAY = 500;

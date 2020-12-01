@@ -2,20 +2,20 @@ import { AppActions, AppActionType, AppState } from "./types";
 
 const initialState: AppState = {
   isLoading: false,
-  errors: "",
+  messages: [],
 };
 
 export const appReducer = (state = initialState, action: AppActions): AppState => {
   switch (action.type) {
-    case AppActionType.CLEAR_ERROR:
+    case AppActionType.REMOVE_MESSAGE:
       return {
         ...state,
-        errors: "",
+        messages: [...state.messages].filter((item) => item.id !== action.payload),
       };
-    case AppActionType.SET_ERROR:
+    case AppActionType.PUSH_MESSAGE:
       return {
         ...state,
-        errors: action.payload,
+        messages: state.messages.concat(action.payload),
       };
     case AppActionType.LOADING_START:
       return {
