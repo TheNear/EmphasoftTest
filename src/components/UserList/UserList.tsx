@@ -37,9 +37,9 @@ const UserList: React.FC = () => {
         </UserTableHead>
         <tbody>
           {usersData.map((user: IUsersResponse) => (
-            <UserListTableRow key={user.id}>
+            <UserListTableRow key={user.id} superUser={user.is_superuser}>
               <UserListTableCell textAlign="center">{user.id}</UserListTableCell>
-              <UserListTableCell>{user.username}</UserListTableCell>
+              <UserListTableCell superUser={user.is_superuser}>{user.username}</UserListTableCell>
               <UserListTableCell>{`${user.first_name} ${user.last_name}`}</UserListTableCell>
               <UserListTableCell textAlign="right">
                 {getFormatedDate(user.last_login)}

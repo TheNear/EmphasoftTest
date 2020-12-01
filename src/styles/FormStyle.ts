@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { fadeInDown } from "./animtaions";
-import { StyledButton } from "./ButtonStyle";
 
 export const AuthFormWrapper = styled.form`
   display: flex;

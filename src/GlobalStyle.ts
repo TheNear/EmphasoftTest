@@ -27,10 +27,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    /* position: fixed; */
-    /* min-width: 100vw; */
-    /* min-height: 100vh; */
-    /* overflow-x: hidden; */
     background: linear-gradient(
     to bottom right,
     ${theme.secondColor},

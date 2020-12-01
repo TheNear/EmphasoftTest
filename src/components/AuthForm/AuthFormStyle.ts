@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { boxShadowStyle, commonContainerStyle } from "../../styles/CommonStyles";
+import { boxShadowStyle } from "../../styles/CommonStyles";
 import { device } from "../../styles/media";
 import { ReactComponent as UserAvatar } from "../../assets/img/userMale.svg";
 
-// FIXME: Фикс. ширина
 export const AuthFormContainer = styled.div`
   display: flex;
   flex-direction: column;
