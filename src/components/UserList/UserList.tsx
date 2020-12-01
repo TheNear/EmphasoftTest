@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { UserListTable, UserListTableCell, UserListTableRow, UserListWrapper, UserTableHead } from "./UserListStyle";
+import {
+  UserListTable,
+  UserListTableCell,
+  UserListTableRow,
+  UserListWrapper,
+  UserTableHead,
+} from "./UserListStyle";
 import { IUsersResponse } from "../../types/api";
 import { fetchUsers } from "../../redux/users/actions";
 import { getSortedUsers } from "../../redux/users/selectors";
@@ -25,8 +31,7 @@ const UserList: React.FC = () => {
               <UserSortButton sortType={PossibleSortTypes.BY_ID}>id</UserSortButton>
             </UserListTableCell>
             <UserListTableCell>user name</UserListTableCell>
-            <UserListTableCell>first name</UserListTableCell>
-            <UserListTableCell>last name</UserListTableCell>
+            <UserListTableCell>full name</UserListTableCell>
             <UserListTableCell textAlign="right">last online</UserListTableCell>
           </tr>
         </UserTableHead>
@@ -35,8 +40,7 @@ const UserList: React.FC = () => {
             <UserListTableRow key={user.id}>
               <UserListTableCell textAlign="center">{user.id}</UserListTableCell>
               <UserListTableCell>{user.username}</UserListTableCell>
-              <UserListTableCell>{user.first_name}</UserListTableCell>
-              <UserListTableCell>{user.last_name}</UserListTableCell>
+              <UserListTableCell>{`${user.first_name} ${user.last_name}`}</UserListTableCell>
               <UserListTableCell textAlign="right">
                 {getFormatedDate(user.last_login)}
               </UserListTableCell>

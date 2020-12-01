@@ -44,12 +44,13 @@ export const AuthInputWrapper = styled.div`
 
 export const AuthErrorMessage = styled.p`
   position: absolute;
-  background-color: rgba(255,255,255, 0.95);
+  max-width: 100%;
+  padding: 3px;
   top: 90%;
+  background-color: rgba(255,255,255, 0.95);
   border-radius: 3px;
   border: 1px solid ${({ theme }) => theme.rejectColor};
   color: ${({ theme }) => theme.rejectColor};
-  padding: 3px;
-  max-width: 100%;
+  font-weight: 700;
   animation: ${fadeInDown} 0.4s ease;
 `;

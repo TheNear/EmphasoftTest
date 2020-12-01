@@ -1,8 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { KeyStringInterface } from "../types/common";
 
-// FIXME : Исправить типизацию
-
 export interface UseFormReturn<T> {
   values: T;
   errors: KeyStringInterface;

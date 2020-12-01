@@ -8,6 +8,7 @@ export const UserListWrapper = styled(CommonContainer)`
 
 export const UserListTable = styled.table`
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
   font-size: 1.3rem;
 `;
@@ -30,6 +31,10 @@ interface UserListTableCellProps {
 
 export const UserListTableCell = styled.td<UserListTableCellProps>`
   padding: 1rem;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
   text-align: ${({ textAlign }) => textAlign || "left"};
   border-bottom: 1px solid ${({ theme }) => theme.inactiveColor};
   ${({ width }) => (width ? `width: ${width}` : "")};

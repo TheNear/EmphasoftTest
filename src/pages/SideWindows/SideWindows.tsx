@@ -6,7 +6,6 @@ import { getMessages, getLoadingStatus } from "../../redux/app/selectors";
 import { SideWindowsWrapper } from "./SideWindowsStyle";
 
 const SideWindows: React.FC = () => {
-  // TODO: Можно сделать всплывашку с ошибками
   const isLoading = useSelector(getLoadingStatus);
   const isMessages = useSelector(getMessages);
   return (

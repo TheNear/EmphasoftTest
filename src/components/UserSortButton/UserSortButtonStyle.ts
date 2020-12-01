@@ -36,7 +36,6 @@ interface SortButtonDirectionProps {
   toLow?: boolean;
 }
 
-// TODO: С дизайном фокусов что-нибудь придумать
 export const SortButtonDirection = styled.button<SortButtonDirectionProps>`
   position: relative;
   display: block;

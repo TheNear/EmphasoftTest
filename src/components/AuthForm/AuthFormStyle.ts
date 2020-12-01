@@ -12,6 +12,7 @@ export const AuthFormContainer = styled.div`
   overflow: hidden;
   ${boxShadowStyle};
   padding: 5rem;
+  margin: 0 1rem;
 
   @media ${device.mobileM} {
     flex-grow: 1;
