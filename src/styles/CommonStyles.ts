@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
 import { device } from "./media";
 
-export const commonContainerStyle = css`
-  padding: 2rem;
+export const boxShadowStyle = css`
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0 18px 4px #00000036;
+`;
+
+export const commonContainerStyle = css`
+  padding: 2rem;
+  ${boxShadowStyle};
 
   @media ${device.tablet} {
     padding: 1.5rem;
@@ -30,7 +34,9 @@ export const CommonContainer = styled.div<CommonContaienrProps>`
   position: relative;
   ${commonContainerStyle};
 
-  ${({ title }) => title && `
+  ${({ title }) =>
+    title
+    && `
   :after {
     position: absolute;
     content: "${title}";
@@ -46,8 +52,17 @@ export const CommonContainer = styled.div<CommonContaienrProps>`
 `;
 
 export const AppContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  padding: 1rem 3rem;
+
+  @media ${device.laptopL} {
+    padding: 1rem;
+  }
+
+  @media ${device.mobileM} {
+    padding: 1rem 0;
+  }
 `;

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { KeyStringInterface } from "../types/common";
 
 // FIXME : Исправить типизацию
@@ -8,29 +8,67 @@ export interface UseFormReturn<T> {
   errors: KeyStringInterface;
   changeHandler: (evt: ChangeEvent<HTMLInputElement>) => void;
   resetValues: () => void;
+  resetErrors: () => void;
+  submitHandler: (evt: FormEvent<HTMLFormElement>) => void;
 }
 
-export const useForm = <T extends KeyStringInterface = KeyStringInterface>(): UseFormReturn<T> => {
+export const useForm = <T extends KeyStringInterface = KeyStringInterface>(
+  callback?: (values: T) => void,
+  validate?: (values: T) => T,
+): UseFormReturn<T> => {
   const [values, setValues] = useState<T>({} as T);
-  const [errors, setErrors] = useState<KeyStringInterface>({});
+  const [errors, setErrors] = useState<T>({} as T);
 
   const changeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setValues({
-      [evt.currentTarget.name]: evt.currentTarget.value,
-    } as T);
+    const fieldName = evt.currentTarget.name;
+    const fieldValue = evt.currentTarget.value;
+    setValues(
+      (state) =>
+        ({
+          ...state,
+          [fieldName]: fieldValue,
+        } as T),
+    );
+  };
+
+  const submitHandler = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    if (validate === undefined || callback === undefined) return;
+
+    const errorsValid = validate(values);
+
+    if (!Object.keys(errorsValid).length) {
+      callback(values);
+    } else {
+      setErrors(errorsValid);
+      Object.keys(values).forEach((input) => {
+        if (input.includes("password")) {
+          setValues((value) => ({
+            ...value,
+            [input]: "",
+          }));
+        }
+      });
+    }
   };
 
   const resetValues = () => {
     setValues({} as T);
   };
 
-  // const submitHandler = () => {
-  // };
+  const resetErrors = () => {
+    if (Object.keys(errors).length !== 0) {
+      setErrors({} as T);
+    }
+  };
 
   return {
     values,
     errors,
     changeHandler,
     resetValues,
+    submitHandler,
+    resetErrors,
   };
 };

@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useForm } from "../../hooks/useForm";
-import { changeFilterValue, resetFilter } from "../../redux/usersFilter/actions";
+import { changeFilterValue } from "../../redux/usersFilter/actions";
 import { UsersFilterState } from "../../redux/usersFilter/types";
 import { CommonInput } from "../../types/common";
 import { UserFilterInput, UserFilterResetButton, UserFilterWrapper } from "./UserFilterStyle";

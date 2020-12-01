@@ -1,5 +1,3 @@
-import { IUsersResponse } from "../../types/api";
-
 export const getFormatedDate = (date: string): string => {
   const dateObj = new Date(date);
   const option: Intl.DateTimeFormatOptions = {

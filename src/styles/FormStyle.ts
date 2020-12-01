@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { fadeInDown } from "./animtaions";
+import { StyledButton } from "./ButtonStyle";
 
 export const AuthFormWrapper = styled.form`
   display: flex;
+  width: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 `;
 
 interface AuthInputProps {
@@ -19,7 +22,6 @@ export const AuthInput = styled.input<AuthInputProps>`
   background-color: transparent;
   border: 1px solid ${({ theme, errors }) => (errors ? theme.rejectColor : theme.secondFontColor)};
   border-radius: 0.4rem;
-  margin: 1rem 0;
   padding: 1rem;
   transition: border 0.4s ease, box-shadow 0.4s ease;
 
@@ -32,4 +34,22 @@ export const AuthInput = styled.input<AuthInputProps>`
   &::placeholder {
     color: ${({ theme }) => theme.secondFontColor};
   }
+
+`;
+
+export const AuthInputWrapper = styled.div`
+  position: relative;
+  margin-bottom: 2rem;
+`;
+
+export const AuthErrorMessage = styled.p`
+  position: absolute;
+  background-color: rgba(255,255,255, 0.95);
+  top: 90%;
+  border-radius: 3px;
+  border: 1px solid ${({ theme }) => theme.rejectColor};
+  color: ${({ theme }) => theme.rejectColor};
+  padding: 3px;
+  max-width: 100%;
+  animation: ${fadeInDown} 0.4s ease;
 `;

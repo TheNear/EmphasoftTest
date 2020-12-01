@@ -1,10 +1,23 @@
-import React from "react";
-import { AuthFormWrapper, AuthInput } from "../../styles/FormStyle";
+import React, { FormEvent } from "react";
+import { useDispatch } from "react-redux";
+import {
+  AuthErrorMessage,
+  AuthFormWrapper,
+  AuthInput,
+  AuthInputWrapper,
+} from "../../styles/FormStyle";
 import { StyledButton } from "../../styles/ButtonStyle";
 import { useForm } from "../../hooks/useForm";
 import { CommonInput } from "../../types/common";
+import { IAuthPost } from "../../types/api";
+import { authRequest } from "../../redux/auth/actions";
+import { loginFormValid } from "../../assets/js/validations";
 
-const loginInputs: CommonInput[] = [
+export interface AuthLoginInputs extends CommonInput {
+  name: Extract<keyof IAuthPost, string>;
+}
+
+const loginInputs: AuthLoginInputs[] = [
   {
     id: "login-username",
     placeholder: "User Name",
@@ -20,20 +33,32 @@ const loginInputs: CommonInput[] = [
 ];
 
 const AuthLoginForm: React.FC = () => {
-  const { values, errors, changeHandler } = useForm();
+  const dispatch = useDispatch();
+
+  const onFormSubmit = (values: IAuthPost) => {
+    dispatch(authRequest(values));
+  };
+
+  const { values, errors, changeHandler, submitHandler, resetErrors } = useForm<IAuthPost>(
+    onFormSubmit,
+    loginFormValid,
+  );
 
   return (
-    <AuthFormWrapper>
+    <AuthFormWrapper onSubmit={submitHandler}>
       {loginInputs.map(({ id, name, placeholder, type }) => (
-        <AuthInput
-          key={id}
-          value={values[name] || ""}
-          errors={errors[name] || ""}
-          placeholder={placeholder}
-          type={type}
-          name={name}
-          onChange={changeHandler}
-        />
+        <AuthInputWrapper key={id}>
+          <AuthInput
+            value={values[name] || ""}
+            errors={errors[name] || ""}
+            placeholder={placeholder}
+            type={type}
+            name={name}
+            onFocus={resetErrors}
+            onChange={changeHandler}
+          />
+          {errors[name] && <AuthErrorMessage>{errors[name]}</AuthErrorMessage>}
+        </AuthInputWrapper>
       ))}
       <StyledButton type="submit">log in</StyledButton>
     </AuthFormWrapper>

@@ -1,4 +1,6 @@
-export interface IAuthPost {
+import { KeyStringInterface } from "./common";
+
+export interface IAuthPost extends KeyStringInterface {
   username: string,
   password: string,
 }

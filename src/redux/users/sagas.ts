@@ -1,15 +1,18 @@
-import { ForkEffect, put, takeEvery } from "redux-saga/effects";
+import { call, ForkEffect, put, takeEvery } from "redux-saga/effects";
 import { UsersActionTypes } from "./types";
-// FIXME: заглушка
-import userData from "../../mock/users.json";
 import { setUsers } from "./actions";
+import { endLoading, startLoading } from "../app/action";
+import { api } from "../../assets/js/services";
 
 function* fetchUsers() {
   try {
-    const users = yield userData;
+    yield put(startLoading());
+    const users = yield call(api.getUsers);
     yield put(setUsers(users));
-  } catch {
-    console.log("FETCH ERROR GENERATOR");
+  } catch (error) {
+    console.log(error);
+  } finally {
+    yield put(endLoading());
   }
 }
 

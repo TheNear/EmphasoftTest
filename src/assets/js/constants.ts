@@ -1,3 +1,13 @@
-export const BASE_URL = "http://emphasoft-test-assignment.herokuapp.com";
-export const AUTH_URL = "/api-token-auth/";
+export interface URLInterface {
+  BASE: string,
+  AUTH: string,
+  USER: string,
+}
+
+export const URL: URLInterface = {
+  BASE: "http://emphasoft-test-assignment.herokuapp.com",
+  AUTH: "/api-token-auth/",
+  USER: "/api/v1/users/",
+};
+
 export const DEBOUNCE_DELAY = 500;

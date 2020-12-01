@@ -2,7 +2,7 @@ import { InferValueTypes } from "../../types/redux";
 import * as actions from "./actions";
 
 export interface IAuthUser {
-  name: string,
+  username: string,
 }
 
 export interface AuthInitialState {
@@ -11,7 +11,10 @@ export interface AuthInitialState {
 }
 
 export enum AuthActionTypes {
-  SIGN_IN = "auth/SIGN_IN",
+  AUTH_REQUEST = "auth/AUTH_REQUEST",
+  LOGOUT_REQUEST = "auth/LOGOUT_REQUEST",
+  SET_AUTHDATA = "auth/SET_AUTHDATA",
+  REMOVE_AUTHDATA = "auth/REMOVE_AUTHDATA",
 }
 
 export type AuthActions = ReturnType<InferValueTypes<typeof actions>>;

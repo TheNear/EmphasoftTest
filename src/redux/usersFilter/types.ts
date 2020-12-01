@@ -4,11 +4,10 @@ import * as actions from "./actions";
 
 export enum UsersFilterActionType {
   CHANGE_VALUE = "userFilter/CHANGE_VALUE",
-  RESET_VALUE = "userFilter/RESET_VALUE",
 }
 
 export interface UsersFilterState extends KeyStringInterface {
-  readonly name: string,
+  readonly name: string;
 }
 
 export type PossibleFilterName = keyof UsersFilterState;

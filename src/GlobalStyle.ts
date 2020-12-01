@@ -27,9 +27,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
+    /* position: fixed; */
+    /* min-width: 100vw; */
+    /* min-height: 100vh; */
+    /* overflow-x: hidden; */
     background: linear-gradient(
     to bottom right,
     ${theme.secondColor},

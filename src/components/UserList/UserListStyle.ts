@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CommonContainer, commonContainerStyle } from "../../styles/CommonStyles";
+import { CommonContainer } from "../../styles/CommonStyles";
 import { device } from "../../styles/media";
 
 export const UserListWrapper = styled(CommonContainer)`

@@ -11,9 +11,6 @@ export const usersFilterReducer = (
   switch (action.type) {
     case UsersFilterActionType.CHANGE_VALUE:
       return action.payload;
-    case UsersFilterActionType.RESET_VALUE:
-      // FIXME: Не пробовал
-      return initialState;
     default:
       return state;
   }

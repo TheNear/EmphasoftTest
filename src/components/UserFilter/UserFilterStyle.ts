@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledButton } from "../../styles/ButtonStyle";
 import { CommonContainer } from "../../styles/CommonStyles";
 import { device } from "../../styles/media";
 
@@ -27,19 +28,11 @@ export const UserFilterInput = styled.input`
   }
 `;
 
-export const UserFilterResetButton = styled.button`
+export const UserFilterResetButton = styled(StyledButton)`
   margin-left: 1rem;
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
-  color: white;
-  border: none;
-  background-color: ${({ theme }) => theme.mainColor};
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: box-shadow 0.3s ease;
 
-  :hover {
-    box-shadow: 0 0 3px 0 ${({ theme }) => theme.mainColor};
+  @media ${device.mobileM} {
+    padding: 0.5rem;
+    font-size: 1.1rem;
   }
 `;

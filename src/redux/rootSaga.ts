@@ -1,4 +1,5 @@
 import { all, AllEffect, ForkEffect } from "redux-saga/effects";
+import { watchFetchAuth, watchLogout } from "./auth/sagas";
 import { watchFetchUsers } from "./users/sagas";
 
 export function* rootSaga(): Generator<
@@ -6,5 +7,5 @@ export function* rootSaga(): Generator<
   void,
   unknown
   > {
-  yield all([watchFetchUsers()]);
+  yield all([watchFetchAuth(), watchFetchUsers(), watchLogout()]);
 }

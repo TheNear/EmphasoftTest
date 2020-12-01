@@ -5,11 +5,12 @@ import { AuthPage } from "./pages/AuthPage/AuthPage";
 import { ProtectedRoute } from "./HoC/ProtectedRoute";
 import { AppContainer } from "./styles/CommonStyles";
 import { SideWindows } from "./pages/SideWindows/SideWindows";
+import { HeaderMenu } from "./components/HeaderMenu/HeaderMenu";
 
 const App: React.FC = () => {
   return (
     <AppContainer>
-      <div>sdfasd</div>
+      <HeaderMenu />
       <Switch>
         <Route exact path="/login" component={AuthPage} />
         <ProtectedRoute exact path="/userlist" component={UsersPage} />
