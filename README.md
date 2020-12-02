@@ -15,8 +15,8 @@
 
 ### Скриншот окна входа
 
-![](screen\login.png)
+![](https://raw.githubusercontent.com/TheNear/EmphasoftTest/master/screen/login.png)
 
 ### Скриншот списка пользователей
 
-![](screen\list.png)
+![](https://raw.githubusercontent.com/TheNear/EmphasoftTest/master/screen/list.png)
