@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from "../../redux/auth/selectors";
 import { HeaderMenuWrapper, UserLogoutButton, UserMenuWrapper, UserTitle } from "./HeaderMenuStyle";
@@ -20,7 +19,6 @@ const HeaderMenu: React.FC = () => {
 
   return (
     <HeaderMenuWrapper>
-      <Link to="/userlist">USERLIST</Link>
       <UserMenuWrapper>
         <UserTitle>{userData.username}</UserTitle>
         <UserLogoutButton type="button" onClick={logoutHandler}>

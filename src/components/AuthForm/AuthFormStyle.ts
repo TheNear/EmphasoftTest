@@ -18,7 +18,7 @@ export const AuthFormContainer = styled.div`
   }
 `;
 
-// TODO: Потом поменять, это не заголовок, а кнопка.
+// TODO: Потом поменять, это не заголовок, а ссылка.
 export const AuthFormTitle = styled.h4`
   font-size: 2rem;
   font-weight: 600;

@@ -7,11 +7,9 @@ import { App } from "./App";
 import { GlobalStyle, theme } from "./GlobalStyle";
 import { store } from "./redux/store";
 
-// FIXME: basename="/EmphasoftTest" добавить в роутер
-
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/EmphasoftTest">
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />

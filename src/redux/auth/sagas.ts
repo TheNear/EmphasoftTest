@@ -1,5 +1,5 @@
 import { call, ForkEffect, put, takeEvery } from "redux-saga/effects";
-import { getErrorMessage } from "../../assets/js/helpers";
+import { getErrorMessage, getSucessMessage } from "../../assets/js/helpers";
 import { api } from "../../assets/js/services";
 import { IAuthResponse } from "../../types/api";
 import { endLoading, pushMessage, startLoading } from "../app/action";
@@ -9,17 +9,18 @@ import { AuthActionTypes, AuthInitialState, IAuthUser } from "./types";
 function* fetchAuth(action: ReturnType<typeof authRequest>) {
   try {
     yield put(startLoading());
-    const result: IAuthResponse = yield call(api.getToken, action.payload);
+    const { token }: IAuthResponse = yield call(api.getToken, action.payload);
     const userData: IAuthUser = {
       username: action.payload.username,
     };
-    localStorage.setItem("token", result.token);
+    localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(userData));
     const authData: AuthInitialState = {
-      token: result.token,
+      token,
       user: userData,
     };
     yield put(setAuthData(authData));
+    yield put(pushMessage(getSucessMessage(`Hello ${action.payload.username}!`)));
   } catch (error) {
     yield put(pushMessage(getErrorMessage(error.message)));
   } finally {

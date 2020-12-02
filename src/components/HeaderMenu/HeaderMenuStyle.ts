@@ -4,7 +4,7 @@ import { CommonContainer } from "../../styles/CommonStyles";
 export const HeaderMenuWrapper = styled(CommonContainer)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 1rem 2rem;
   margin-bottom: 2rem;
 `;
