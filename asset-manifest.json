@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/NotionTest/static/js/main.c3303ef9.chunk.js",
+    "main.js.map": "/NotionTest/static/js/main.c3303ef9.chunk.js.map",
+    "runtime-main.js": "/NotionTest/static/js/runtime-main.02f7a856.js",
+    "runtime-main.js.map": "/NotionTest/static/js/runtime-main.02f7a856.js.map",
+    "static/js/2.66b19a3f.chunk.js": "/NotionTest/static/js/2.66b19a3f.chunk.js",
+    "static/js/2.66b19a3f.chunk.js.map": "/NotionTest/static/js/2.66b19a3f.chunk.js.map",
+    "index.html": "/NotionTest/index.html",
+    "static/js/2.66b19a3f.chunk.js.LICENSE.txt": "/NotionTest/static/js/2.66b19a3f.chunk.js.LICENSE.txt",
+    "static/media/loader.f308d07a.svg": "/NotionTest/static/media/loader.f308d07a.svg",
+    "static/media/logout.5ff279a4.svg": "/NotionTest/static/media/logout.5ff279a4.svg",
+    "static/media/reject.9895197a.svg": "/NotionTest/static/media/reject.9895197a.svg",
+    "static/media/success.30036e3a.svg": "/NotionTest/static/media/success.30036e3a.svg",
+    "static/media/userMale.fc660f50.svg": "/NotionTest/static/media/userMale.fc660f50.svg",
+    "static/media/warn.1cf133b6.svg": "/NotionTest/static/media/warn.1cf133b6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02f7a856.js",
+    "static/js/2.66b19a3f.chunk.js",
+    "static/js/main.c3303ef9.chunk.js"
+  ]
+}
