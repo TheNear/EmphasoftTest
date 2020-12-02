@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/EmphasoftTest/static/js/main.fc689f2b.chunk.js",
-    "main.js.map": "/EmphasoftTest/static/js/main.fc689f2b.chunk.js.map",
+    "main.js": "/EmphasoftTest/static/js/main.9c0800dc.chunk.js",
+    "main.js.map": "/EmphasoftTest/static/js/main.9c0800dc.chunk.js.map",
     "runtime-main.js": "/EmphasoftTest/static/js/runtime-main.cc7bf399.js",
     "runtime-main.js.map": "/EmphasoftTest/static/js/runtime-main.cc7bf399.js.map",
-    "static/js/2.e55e2a1c.chunk.js": "/EmphasoftTest/static/js/2.e55e2a1c.chunk.js",
-    "static/js/2.e55e2a1c.chunk.js.map": "/EmphasoftTest/static/js/2.e55e2a1c.chunk.js.map",
+    "static/js/2.d1fe3bd9.chunk.js": "/EmphasoftTest/static/js/2.d1fe3bd9.chunk.js",
+    "static/js/2.d1fe3bd9.chunk.js.map": "/EmphasoftTest/static/js/2.d1fe3bd9.chunk.js.map",
     "index.html": "/EmphasoftTest/index.html",
-    "static/js/2.e55e2a1c.chunk.js.LICENSE.txt": "/EmphasoftTest/static/js/2.e55e2a1c.chunk.js.LICENSE.txt",
+    "static/js/2.d1fe3bd9.chunk.js.LICENSE.txt": "/EmphasoftTest/static/js/2.d1fe3bd9.chunk.js.LICENSE.txt",
     "static/media/loader.f308d07a.svg": "/EmphasoftTest/static/media/loader.f308d07a.svg",
     "static/media/logout.5ff279a4.svg": "/EmphasoftTest/static/media/logout.5ff279a4.svg",
     "static/media/reject.9895197a.svg": "/EmphasoftTest/static/media/reject.9895197a.svg",
@@ -17,7 +17,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.cc7bf399.js",
-    "static/js/2.e55e2a1c.chunk.js",
-    "static/js/main.fc689f2b.chunk.js"
+    "static/js/2.d1fe3bd9.chunk.js",
+    "static/js/main.9c0800dc.chunk.js"
   ]
 }
