@@ -5,7 +5,7 @@ export interface URLInterface {
 }
 
 export const URL: URLInterface = {
-  BASE: "http://emphasoft-test-assignment.herokuapp.com",
+  BASE: "https://emphasoft-test-assignment.herokuapp.com",
   AUTH: "/api-token-auth/",
   USER: "/api/v1/users/",
 };
