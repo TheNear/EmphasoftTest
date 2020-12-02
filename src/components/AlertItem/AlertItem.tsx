@@ -7,10 +7,11 @@ import { Alert } from "./AlertItemStyle";
 
 export interface AlertItemProps {
   id: string,
-  type: PossibleMessageTypes;
+  type: PossibleMessageTypes,
+  lifetime?: number,
 }
 
-const AlertItem: React.FC<AlertItemProps> = ({ id, type, children }) => {
+const AlertItem: React.FC<AlertItemProps> = ({ id, type, lifetime, children }) => {
   const dispatch = useDispatch();
 
   const removeMessage = useCallback(() => {
@@ -20,8 +21,8 @@ const AlertItem: React.FC<AlertItemProps> = ({ id, type, children }) => {
   useEffect(() => {
     setTimeout(() => {
       removeMessage();
-    }, ALERT_LIFE_TIME);
-  }, [removeMessage]);
+    }, lifetime || ALERT_LIFE_TIME);
+  }, [lifetime, removeMessage]);
 
   return <Alert lifetime={ALERT_LIFE_TIME} type={type}>{children}</Alert>;
 };

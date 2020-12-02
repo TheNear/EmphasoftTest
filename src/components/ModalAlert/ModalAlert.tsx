@@ -11,7 +11,9 @@ const ModalAlert: React.FC<ModalAlertProps> = ({ data }) => {
   return (
     <ModalAlertWrapper>
       {data.map((alert) => (
-        <AlertItem id={alert.id} type={alert.type} key={alert.id}>{alert.content}</AlertItem>
+        <AlertItem lifetime={alert.lifetime} id={alert.id} type={alert.type} key={alert.id}>
+          {alert.content}
+        </AlertItem>
       ))}
     </ModalAlertWrapper>
   );

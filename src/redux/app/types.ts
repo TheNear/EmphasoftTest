@@ -16,6 +16,7 @@ export interface PossibleMessage {
   id: string,
   type: PossibleMessageTypes,
   content: string,
+  lifetime?: number,
 }
 
 export enum AppActionType {

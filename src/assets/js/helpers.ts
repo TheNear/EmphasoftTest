@@ -15,20 +15,23 @@ export const getFormatedDate = (date: string): string => {
   return `${dateStr}`;
 };
 
-export const getErrorMessage = (message: string): PossibleMessage => ({
+export const getErrorMessage = (message: string, lifetime?: number): PossibleMessage => ({
   id: `${Date.now()}`,
   content: message,
   type: PossibleMessageTypes.ERROR,
+  lifetime,
 });
 
-export const getSucessMessage = (message: string): PossibleMessage => ({
+export const getSucessMessage = (message: string, lifetime?: number): PossibleMessage => ({
   id: `${Date.now()}`,
   content: message,
   type: PossibleMessageTypes.SUCCESS,
+  lifetime,
 });
 
-export const getWarnMessage = (message: string): PossibleMessage => ({
+export const getWarnMessage = (message: string, lifetime?: number): PossibleMessage => ({
   id: `${Date.now()}`,
   content: message,
   type: PossibleMessageTypes.WARNING,
+  lifetime,
 });
